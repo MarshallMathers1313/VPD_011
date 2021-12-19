@@ -1,0 +1,227 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[5];
+
+            //for
+            for(int i = 0; i < 5; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+
+
+            //foreach
+            foreach (int i in array)
+            {
+                Console.Write(i + " ");
+            }
+        }
+    }
+}
+
+======================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[5];
+
+            int i = 0;
+        //goto
+        Loop:
+            if (i < 5)
+            {
+                Console.Write(array[i] + " ");
+                i++;
+                goto Loop;
+            }
+            
+        }
+    }
+}
+
+====================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Массив
+            int[] a = new int[5] { 1, 2, 3, 4, 5 };
+
+            Random random = new Random();
+
+            for(int i = 0; i < a.Length; i++)
+            {
+                a[i] = random.Next(1, 10);
+                Console.Write(a[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Min: " + a.Min());
+
+            Console.WriteLine("Max: " + a.Max());
+
+            Array.Sort(a);
+
+            foreach(int i in a)
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+
+=========================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Массив
+            int[,] array = new int[3, 4];
+
+            Random random = new Random();
+
+            for(int i = 0; i < array.GetLength(0); i++)
+            { 
+                for(int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = random.Next(1, 25);
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            int k = 0;
+            foreach (int j in array)
+            {
+                
+                if (k % 4 == 0)
+                {
+                    Console.WriteLine();
+                }
+                Console.Write(j + " ");
+                k++;
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+
+========================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Массив
+            int[][] array = new int[2][];
+
+            for(int i = 0; i < 2; i++)
+            {
+                array[i] = new int[i + 1];
+            }
+
+            for(int i = 0; i < 2; i++)
+            {
+                for(int j = 0; j < array[i].Length; j++)
+                {
+                    Console.Write(array[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            //foreach
+            for(int i = 0; i < 2; i++)
+            {
+                foreach(int j in array[i])
+                {
+                    Console.Write(array[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+
+================================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void hello(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        static void Main(string[] args)
+        {
+            int a = 5;
+            int b = 20;
+
+            Console.WriteLine("a = " + a);
+            Console.WriteLine("b = " + b);
+
+            hello(ref (a), ref (b));
+
+            Console.WriteLine("a = " + a);
+            Console.WriteLine("b = " + b);
+
+            Console.ReadLine();
+        }
+
+        
+    }
+}
